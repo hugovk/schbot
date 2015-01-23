@@ -21,14 +21,14 @@ class TestIt(unittest.TestCase):
         Words beginning with a single consonant typically replace that
         consonant with shm- (table shmable).
         """
-        input = "table"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmable")
+        intext = "table"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmable")
 
     def test_start_single_consonant2(self):
-        input = "HOTEL"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "SCHMOTEL")
+        intext = "HOTEL"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "SCHMOTEL")
 
     def test_start_consonant_cluster1(self):
         """
@@ -37,39 +37,39 @@ class TestIt(unittest.TestCase):
         (breakfast shmreakfast), others replace the entire cluster
         (breakfast shmeakfast).
         """
-        input = "breakfast"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmeakfast")
+        intext = "breakfast"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmeakfast")
 
     def test_start_consonant_cluster2(self):
-        input = "group"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmoup")
+        intext = "group"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmoup")
 
     def test_start_vowel1(self):
         """
         Vowel-initial words prepend the shm- directly to the beginning of the
         reduplicant (apple shmapple).
         """
-        input = "apple"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmapple")
+        intext = "apple"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmapple")
 
     def test_two_words1(self):
         """
         When speaking two words, usually only the second word is
         shm-reduplicated (Led Zeppelin Led Shmeppelin).
         """
-        input = "Led Zeppelin"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "Led Schmeppelin")
+        intext = "Led Zeppelin"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Led Schmeppelin")
 
     def test_three_words1(self):
         """
         """
-        input = "red and yellow"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "red and schmellow")
+        intext = "red and yellow"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "red and schmellow")
 
     def test_schm_words1(self):
         """
@@ -78,254 +78,254 @@ class TestIt(unittest.TestCase):
         expected *schmuck schmuck, but rather total avoidance or mutation of
          the shm- (giving forms like schmuck shluck, schmuck fluck, and so on).
         """
-        input = "schmuck"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schnuck")
+        intext = "schmuck"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schnuck")
 
     def test_bagel(self):
-        input = "bagel"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmagel")
+        intext = "bagel"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmagel")
 
     def test_accent(self):
-        input = "Joe"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "Schmoe")
+        intext = "Joe"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schmoe")
 
     def test_money(self):
-        input = "money"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmoney")
+        intext = "money"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmoney")
 
     def test_father(self):
-        input = "father"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmather")
+        intext = "father"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmather")
 
     def test_page(self):
-        input = "page"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmage")
+        intext = "page"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmage")
 
     def test_crisis(self):
-        input = "crisis"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmisis")
+        intext = "crisis"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmisis")
 
     def test_street(self):
-        input = "street"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmeet")
+        intext = "street"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmeet")
 
     def test_rich(self):
-        input = "rich"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmich")
+        intext = "rich"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmich")
 
     def test_floozie(self):
-        input = "floozie"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmoozie")
+        intext = "floozie"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmoozie")
 
     def test_floss(self):
-        input = "floss"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmoss")
+        intext = "floss"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmoss")
 
     def test_broom(self):
-        input = "broom"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmoom")
+        intext = "broom"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmoom")
 
     def test_first_vowel_found(self):
-        input = "bad"
-        output = schpy.first_vowel(input)
-        self.assertEqual(output, 1)
+        intext = "bad"
+        outtext = schpy.first_vowel(intext)
+        self.assertEqual(outtext, 1)
 
     def test_first_vowel_not_found(self):
-        input = "bd"
-        output = schpy.first_vowel(input)
-        self.assertEqual(output, -1)
+        intext = "bd"
+        outtext = schpy.first_vowel(intext)
+        self.assertEqual(outtext, -1)
 
     def test_union(self):
-        input = "union"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmunion")
+        intext = "union"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmunion")
 
     def test_wig(self):
-        input = "wig"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmig")
+        intext = "wig"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmig")
 
     def test_nothing(self):
-        input = ""
-        output = schpy.schpy(input)
-        self.assertEqual(output, "")
+        intext = ""
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "")
 
     def test_witches(self):
-        input = "witches"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmitches")
+        intext = "witches"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmitches")
 
     def test_ashmont(self):
-        input = "Ashmont"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "Schmashmont")
+        intext = "Ashmont"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schmashmont")
 
     def test_ishmael(self):
-        input = "Ishmael"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "Schmishmael")
+        intext = "Ishmael"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schmishmael")
 
     def test_ash(self):
-        input = "ash"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmash")
+        intext = "ash"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmash")
 
     def test_gibberish(self):
-        input = "gibberish"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmibberish")
+        intext = "gibberish"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmibberish")
 
     def test_massage(self):
-        input = "massage"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmassage")
+        intext = "massage"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmassage")
 
     def test_circus(self):
-        input = "circus"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmircus")
+        intext = "circus"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmircus")
 
     def test_schnozz(self):
-        input = "schnozz"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmozz")
+        intext = "schnozz"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmozz")
 
     def test_terrific(self):
-        input = "terrific"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmerrific")
+        intext = "terrific"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmerrific")
 
     def test_obscene(self):
-        input = "obscene"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmobscene")
+        intext = "obscene"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmobscene")
 
     def test_walkman(self):
-        input = "walkman"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmalkman")
+        intext = "walkman"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmalkman")
 
     def test_schmidt(self):
-        input = "Schmidt"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "Schnidt")
+        intext = "Schmidt"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schnidt")
 
     def test_schmooze(self):
-        input = "schmooze"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schnooze")
+        intext = "schmooze"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schnooze")
 
     def test_metalinguistic(self):
-        input = "metalinguistic"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmetalinguistic")
+        intext = "metalinguistic"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmetalinguistic")
 
     def test_sky(self):
-        input = "sky"
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schmy")
+        intext = "sky"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmy")
 
     def test_topic_schmopic_1(self):
-        input = "Until Dawn"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "Until Schmawn")
+        intext = "Until Dawn"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "Until Schmawn")
 
     def test_topic_schmopic_2(self):
-        input = "#CameronMustGo"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#CameronMustSchmo")
+        intext = "#CameronMustGo"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#CameronMustSchmo")
 
     def test_topic_schmopic_3(self):
-        input = "Uncharted 4"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, False)
+        intext = "Uncharted 4"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, False)
 
     def test_topic_schmopic_4(self):
-        input = "#hayesvideo"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#schmayesvideo")
+        intext = "#hayesvideo"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#schmayesvideo")
 
     def test_topic_schmopic_5(self):
-        input = "#100kHappyBailey"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#100kHappySchmailey")
+        intext = "#100kHappyBailey"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#100kHappySchmailey")
 
     def test_topic_schmopic_6(self):
-        input = "#XFactorSemiFinal"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#XFactorSemiSchminal")
+        intext = "#XFactorSemiFinal"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#XFactorSemiSchminal")
 
     def test_topic_schmopic_7(self):
-        input = "#PlayStationExperience"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#PlayStationSchmexperience")
+        intext = "#PlayStationExperience"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#PlayStationSchmexperience")
 
     def test_topic_schmopic_8(self):
-        input = "No Man's Sky"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "No Man's Schmy")
+        intext = "No Man's Sky"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "No Man's Schmy")
 
     def test_topic_schmopic_9(self):
-        input = "Mariah"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "Schmariah")
+        intext = "Mariah"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "Schmariah")
 
     def test_topic_schmopic_10(self):
-        input = "Yakuza 5"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, False)
+        intext = "Yakuza 5"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, False)
 
     def test_sniper(self):
-        input = "sniper"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "schmiper")
+        intext = "sniper"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "schmiper")
 
     def test_smart(self):
-        input = "smart"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "schmart")
+        intext = "smart"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "schmart")
 
     def test_topic_schmopic_11(self):
-        input = "American Sniper"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "American Schmiper")
+        intext = "American Sniper"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "American Schmiper")
 
     def test_topic_schmopic_12(self):
-        input = "FINTECH2015"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "SCHMINTECH2015")
+        intext = "FINTECH2015"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "SCHMINTECH2015")
 
     def test_quotes(self):
-        input = "quotes"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "schmotes")
+        intext = "quotes"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "schmotes")
 
     def test_topic_schmopic_13(self):
-        input = "#SnotQuotes"
-        output = schpy.topic_schmopic(input)
-        self.assertEqual(output, "#SnotSchmotes")
+        intext = "#SnotQuotes"
+        outtext = schpy.topic_schmopic(intext)
+        self.assertEqual(outtext, "#SnotSchmotes")
 
 #     def test_topic_schmopic_11(self):
-#         input = "#MCFCvEFC"
-#         output = schpy.topic_schmopic(input)
-#         self.assertEqual(output, "#MCFCvEFC")
+#         intext = "#MCFCvEFC"
+#         outtext = schpy.topic_schmopic(intext)
+#         self.assertEqual(outtext, "#MCFCvEFC")
 
     def xtest_(self):
-        input = ""
-        output = schpy.schpy(input)
-        self.assertEqual(output, "schm")
+        intext = ""
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schm")
 
 
 # Some speakers target the stressed syllable rather than the first syllable

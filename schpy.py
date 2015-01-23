@@ -130,8 +130,8 @@ def topic_schmopic(topic):
     return words
 
 
-def print_result(input, output):
-    text = input + "? " + output + random.choice(TERMINATORS)
+def print_result(intext, outtext):
+    text = intext + "? " + outtext + random.choice(TERMINATORS)
     print(text)
     return text
 
@@ -146,12 +146,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.phrase:
-        input = args.phrase
-        output = schpy(args.phrase)
+        intext = args.phrase
+        outtext = schpy(args.phrase)
     elif args.topic:
-        input = args.topic
-        output = topic_schmopic(args.topic)
+        intext = args.topic
+        outtext = topic_schmopic(args.topic)
 
-    print_result(input, output)
+    print_result(intext, outtext)
 
 # End of file

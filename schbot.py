@@ -78,7 +78,7 @@ def load_list(the_filename):
 
 
 def get_trending_topics_from_twitter(location="World"):
-    global TWITTER, data, saved_trends
+    global TWITTER
 
     print("Location:", location)
 
@@ -114,7 +114,7 @@ def get_trending_topics_from_twitter(location="World"):
 
 
 def tweet_it(string, in_reply_to_status_id=None):
-    global TWITTER, data
+    global TWITTER
 
     if len(string) <= 0:
         print("ERROR: trying to tweet an empty tweet!")
@@ -148,8 +148,6 @@ def tweet_it(string, in_reply_to_status_id=None):
 
 
 if __name__ == "__main__":
-    global data
-
     parser = argparse.ArgumentParser(
         description="Tweet a trending topic using shm-reduplication.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -181,8 +179,8 @@ if __name__ == "__main__":
     print(saved_trends)
 
     if args.topic:
-        input = args.topic
-        output = schpy.topic_schmopic(args.topic)
+        intext = args.topic
+        outtext = schpy.topic_schmopic(args.topic)
         print(args.topic)
     else:
         print("Get a topic from Twitter")
@@ -193,22 +191,22 @@ if __name__ == "__main__":
             sys.exit("Nowt found, try later")
 
         for trend in trends:
-            input = trend
-            output = schpy.topic_schmopic(trend)
-            if output:
+            intext = trend
+            outtext = schpy.topic_schmopic(trend)
+            if outtext:
                 break
             else:
-                "no output for " + input + ", find another"
+                sys.exit("no output for " + intext + ", find another")
 
-    if not output:
+    if not outtext:
         sys.exit("Nowt found, try later")
 
-    tweet = schpy.print_result(input, output)
+    tweet = schpy.print_result(intext, outtext)
 
     print("Tweet this:\n", tweet)
     try:
         tweet_it(tweet)
-        saved_trends.append(input)
+        saved_trends.append(intext)
         save_list(args.cache, saved_trends)
 
     except twitter.api.TwitterHTTPError as e:
