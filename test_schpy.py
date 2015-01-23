@@ -317,6 +317,13 @@ class TestIt(unittest.TestCase):
         outtext = schpy.topic_schmopic(intext)
         self.assertEqual(outtext, "#SnotSchmotes")
 
+    def test_print_result(self):
+        in_intext = "bot"
+        in_outtext = "schmot"
+        out_outtext = schpy.print_result(in_intext, in_outtext)
+        self.assertEqual(out_outtext[:-1], "bot? schmot")
+        self.assertIn(out_outtext[-1], "?!")
+
 #     def test_topic_schmopic_11(self):
 #         intext = "#MCFCvEFC"
 #         outtext = schpy.topic_schmopic(intext)
