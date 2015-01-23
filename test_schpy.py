@@ -321,8 +321,7 @@ class TestIt(unittest.TestCase):
         in_intext = "bot"
         in_outtext = "schmot"
         out_outtext = schpy.print_result(in_intext, in_outtext)
-        self.assertEqual(out_outtext[:-1], "bot? schmot")
-        self.assertIn(out_outtext[-1], "?!")
+        self.assertIn("bot? schmot", out_outtext)
 
 #     def test_topic_schmopic_11(self):
 #         intext = "#MCFCvEFC"
