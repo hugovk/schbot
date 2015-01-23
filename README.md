@@ -1,5 +1,10 @@
 # schbot
 
+[![Build Status](https://travis-ci.org/hugovk/schbot.svg?branch=master)](https://travis-ci.org/hugovk/schbot)
+[![Coverage Status](https://coveralls.io/repos/hugovk/schbot/badge.svg?branch=master)](https://coveralls.io/r/hugovk/schbot?branch=master)
+[![Code Health](https://landscape.io/github/hugovk/schbot/master/landscape.svg)](https://landscape.io/github/hugovk/schbot/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hugovk/schbot/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hugovk/schbot/?branch=master)
+
 A grumpy Twitter bot repeating trending topics with shm-reduplication.
 
 Join in the grumpy fun and follow **[@BotSchmot](https://twitter.com/botschmot)**!
