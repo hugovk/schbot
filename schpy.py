@@ -60,8 +60,6 @@ def schpy(phrase):
         last_word = "schm" + last_word[2:]
     elif last_word.startswith("sn"):
         last_word = "schm" + last_word[2:]
-    elif last_word.startswith("th"):
-        last_word = "schm" + last_word[2:]
     elif last_word.startswith("qu"):
         last_word = "schm" + last_word[2:]
     elif(startswith_consonants(last_word, "rlk")):
@@ -69,8 +67,15 @@ def schpy(phrase):
         last_word = "schm" + last_word[v_pos:]
 #     elif last_word[0] in CONSONANTS and last_word[1] in CONSONANTS:
 #         last_word = "schm" + last_word[1:]
-    elif last_word[0] in CONSONANTS:  # and phrase[1] in VOWELS:
+    # CONSONANT-VOWEL-
+    elif (last_word[0] in CONSONANTS and
+          last_word[1] not in CONSONANTS):
         last_word = "schm" + last_word[1:]
+    # CONSONANT-CONSONANT-VOWEL-
+    elif (last_word[0] in CONSONANTS and
+          last_word[1] in CONSONANTS and
+          last_word[2] not in CONSONANTS):
+        last_word = "schm" + last_word[2:]
     elif last_word[0] not in CONSONANTS:
         last_word = "schm" + last_word
 
