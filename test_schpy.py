@@ -338,6 +338,11 @@ class TestIt(unittest.TestCase):
         outtext = schpy.schpy(intext)
         self.assertEqual(outtext, "Schmool")
 
+    def test_lyrics(self):
+        intext = "lyrics"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmyrics")
+
 #     def test_topic_schmopic_11(self):
 #         intext = "#MCFCvEFC"
 #         outtext = schpy.topic_schmopic(intext)

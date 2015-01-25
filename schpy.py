@@ -14,14 +14,25 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 TERMINATORS = ["!", "..."]
 
 
-def is_vowel(char):
-    return char.lower() not in CONSONANTS
+def is_vowel(char, i=0):
+    """
+    Assumptions:
+     * Y at the start of a word is not a vowel.
+     * Y anywhere else is a vowel.
+    """
+    if i == 0:
+        return char.lower() not in CONSONANTS
+    else:
+        if char.lower() == 'y':
+            return True
+        else:
+            return char.lower() not in CONSONANTS
 
 
 def first_vowel(word):
     """Return index of first vowel"""
     for i in range(len(word)):
-        if is_vowel(word[i]):
+        if is_vowel(word[i], i):
             return i
     return -1
 
