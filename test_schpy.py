@@ -14,7 +14,26 @@ except ImportError:
 import schpy
 
 
-class TestIt(unittest.TestCase):
+class TestMisc(unittest.TestCase):
+
+    def test_print_result(self):
+        in_intext = "bot"
+        in_outtext = "schmot"
+        out_outtext = schpy.print_result(in_intext, in_outtext)
+        self.assertIn("bot? schmot", out_outtext)
+
+    def test_first_vowel_found(self):
+        intext = "bad"
+        outtext = schpy.first_vowel(intext)
+        self.assertEqual(outtext, 1)
+
+    def test_first_vowel_not_found(self):
+        intext = "bd"
+        outtext = schpy.first_vowel(intext)
+        self.assertEqual(outtext, -1)
+
+
+class TestSchpy(unittest.TestCase):
 
     def test_start_single_consonant1(self):
         """
@@ -137,16 +156,6 @@ class TestIt(unittest.TestCase):
         outtext = schpy.schpy(intext)
         self.assertEqual(outtext, "schmoom")
 
-    def test_first_vowel_found(self):
-        intext = "bad"
-        outtext = schpy.first_vowel(intext)
-        self.assertEqual(outtext, 1)
-
-    def test_first_vowel_not_found(self):
-        intext = "bd"
-        outtext = schpy.first_vowel(intext)
-        self.assertEqual(outtext, -1)
-
     def test_union(self):
         intext = "union"
         outtext = schpy.schpy(intext)
@@ -237,6 +246,34 @@ class TestIt(unittest.TestCase):
         outtext = schpy.schpy(intext)
         self.assertEqual(outtext, "schmy")
 
+    def test_this(self):
+        intext = "this"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmis")
+
+    def test_scotland(self):
+        intext = "Scotland"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schmotland")
+
+    def test_school(self):
+        intext = "School"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "Schmool")
+
+    def test_lyrics(self):
+        intext = "lyrics"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmyrics")
+
+    def test_quotes(self):
+        intext = "quotes"
+        outtext = schpy.schpy(intext)
+        self.assertEqual(outtext, "schmotes")
+
+
+class TestSchmopic(unittest.TestCase):
+
     def test_topic_schmopic_1(self):
         intext = "Until Dawn"
         outtext = schpy.topic_schmopic(intext)
@@ -307,51 +344,15 @@ class TestIt(unittest.TestCase):
         outtext = schpy.topic_schmopic(intext)
         self.assertEqual(outtext, "SCHMINTECH2015")
 
-    def test_quotes(self):
-        intext = "quotes"
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "schmotes")
-
     def test_topic_schmopic_13(self):
         intext = "#SnotQuotes"
         outtext = schpy.topic_schmopic(intext)
         self.assertEqual(outtext, "#SnotSchmotes")
 
-    def test_print_result(self):
-        in_intext = "bot"
-        in_outtext = "schmot"
-        out_outtext = schpy.print_result(in_intext, in_outtext)
-        self.assertIn("bot? schmot", out_outtext)
-
-    def test_this(self):
-        intext = "this"
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "schmis")
-
-    def test_scotland(self):
-        intext = "Scotland"
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "Schmotland")
-
-    def test_scotland(self):
-        intext = "School"
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "Schmool")
-
-    def test_lyrics(self):
-        intext = "lyrics"
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "schmyrics")
-
 #     def test_topic_schmopic_11(self):
 #         intext = "#MCFCvEFC"
 #         outtext = schpy.topic_schmopic(intext)
 #         self.assertEqual(outtext, "#MCFCvEFC")
-
-    def xtest_(self):
-        intext = ""
-        outtext = schpy.schpy(intext)
-        self.assertEqual(outtext, "schm")
 
 
 # Some speakers target the stressed syllable rather than the first syllable
