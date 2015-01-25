@@ -78,6 +78,10 @@ def schpy(phrase):
         last_word = "schm" + last_word[2:]
     elif last_word[0] not in CONSONANTS:
         last_word = "schm" + last_word
+    else:
+        # schm-[FIRST-VOWEL]-
+        v_pos = first_vowel(last_word)
+        last_word = "schm" + last_word[v_pos:]
 
     # ALL CAPS
     if words[-1].isupper():
