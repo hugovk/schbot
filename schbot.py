@@ -77,6 +77,18 @@ def load_list(the_filename):
     return my_list
 
 
+def case_insensitive_in(a, b):
+    """
+    Like in(), but case-insensitive.
+    case_insensitive_in("x", ["x", "y"]) == True
+    case_insensitive_in("X", ["X", "Y"]) == True
+    case_insensitive_in("X", ["x", "y"]) == True
+    case_insensitive_in("x", ["X", "Y"]) == True
+    """
+    a_lower = a.lower()
+    return any(a_lower == val.lower() for val in b)
+
+
 def get_trending_topics_from_twitter(location="World"):
     global TWITTER
 
@@ -105,10 +117,15 @@ def get_trending_topics_from_twitter(location="World"):
     for trend in trends['trends']:
         print("-"*80)
         pprint(trend)
-        print(trend['name'])
-        print("Already posted?", trend['name'] in saved_trends)
-        if not trend['promoted_content'] and trend['name'] not in saved_trends:
-            kept_trends.append(trend['name'])
+        promoted_content = trend['promoted_content']
+        trend = trend['name']
+        print(trend)
+        print("Already posted?", trend in saved_trends)
+
+        if (not trend.lower().endswith("day") and
+            not promoted_content and
+            not case_insensitive_in(trend, saved_trends)):
+            kept_trends.append(trend)
 
     return kept_trends
 
