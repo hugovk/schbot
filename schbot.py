@@ -157,7 +157,7 @@ def tweet_it(string, in_reply_to_status_id=None):
             # lat=HELSINKI_LAT, long=HELSINKI_LONG,
             display_coordinates=True,
             in_reply_to_status_id=in_reply_to_status_id)
-        url = "http://twitter.com/" + \
+        url = "https://twitter.com/" + \
             result['user']['screen_name'] + "/status/" + result['id_str']
         print("Tweeted: " + url)
         if not args.no_web:

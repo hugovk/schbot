@@ -3,13 +3,10 @@
 """
 Unit tests for schpy.py
 https://en.wikipedia.org/wiki/Shm-reduplication
-http://www.academia.edu/209796/Metalinguistic_shmetalinguistic_The_phonology_of_shm-reduplication
+https://www.academia.edu/209796/Metalinguistic_shmetalinguistic_The_phonology_of_shm-reduplication
 """
 from __future__ import print_function, unicode_literals
-try:
-    import unittest2 as unittest
-except ImportError:
-    import unittest
+import unittest
 
 import schpy
 
