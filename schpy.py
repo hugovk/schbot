@@ -3,7 +3,7 @@
 """
 Output some text using shm-reduplication.
 https://en.wikipedia.org/wiki/Shm-reduplication
-http://www.academia.edu/209796/Metalinguistic_shmetalinguistic_The_phonology_of_shm-reduplication
+https://www.academia.edu/209796/Metalinguistic_shmetalinguistic_The_phonology_of_shm-reduplication
 """
 from __future__ import print_function, unicode_literals
 import argparse
